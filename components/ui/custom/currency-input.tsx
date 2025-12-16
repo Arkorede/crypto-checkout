@@ -110,7 +110,7 @@ export default function CurrencyInput({
         <Button
           type="button"
           variant="outline"
-          className="flex items-center gap-2 rounded-[20px] border border-gray-400 bg-gray-100! px-3 py-2"
+          className="flex cursor-pointer items-center gap-2 rounded-[20px] border border-gray-400 bg-[#F7F7F7] px-3 py-2"
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
           aria-haspopup="listbox"

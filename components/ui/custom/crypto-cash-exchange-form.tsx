@@ -11,9 +11,9 @@ import { useState } from "react";
 const tabsStyles = tv({
   slots: {
     tabsList:
-      "mx-auto grid w-full max-w-98 grid-cols-3 rounded-full bg-gray-200",
+      "mx-auto grid w-[90%] max-w-98 grid-cols-3 rounded-full bg-gray-200",
     tabsTrigger:
-      "data-[state=active]:bg-primary rounded-full border px-4 py-2 text-sm font-medium data-[state=active]:text-white",
+      "data-[state=active]:bg-primary rounded-full border px-2 py-2 text-xs font-medium data-[state=active]:text-white sm:px-4 sm:text-sm",
   },
 });
 
@@ -154,10 +154,14 @@ export default function CryptoCashExchangeForm() {
             value={paymentMethod}
             onChange={setPaymentMethod}
           />
-          <PaymentMethodSelect label="Pay to" value="" onChange={() => {}} />
+          <PaymentMethodSelect
+            label="Pay to"
+            value={paymentMethod}
+            onChange={setPaymentMethod}
+          />
           <Button
             type="submit"
-            className="bg-primary h-12 w-full rounded-full text-base font-medium text-white hover:bg-[#0d3f46]"
+            className="bg-primary h-12 w-full cursor-pointer rounded-full text-base font-medium text-white hover:bg-[#0d3f46]"
             disabled={!youPayAmount || !paymentMethod}
             aria-disabled={!youPayAmount || !paymentMethod}
             aria-label="Proceed to convert cryptocurrency"

@@ -39,15 +39,15 @@ export default function RecipientDetails({
   return (
     <div className="">
       <div className="">
-        <div className="flex items-center gap-3">
+        <div className="flex justify-between">
           <Button
             variant="ghost"
             size="icon"
-            className="-ml-2 h-8 w-8"
             onClick={onBack}
             aria-label="Go back to exchange form"
+            className="cursor-pointer"
           >
-            <ArrowLeft className="h-5 w-5" />
+            <ArrowLeft className="h-6 w-6" />
             <span className="sr-only">Back</span>
           </Button>
           <h2
@@ -56,9 +56,10 @@ export default function RecipientDetails({
           >
             Recipient details
           </h2>
+          <div></div>
         </div>
       </div>
-      <div className="space-y-6 p-6">
+      <div className="space-y-6 pt-8">
         <form
           className="space-y-6"
           onSubmit={(e) => {
@@ -77,13 +78,13 @@ export default function RecipientDetails({
             <Select value={bank} onValueChange={setBank} required>
               <SelectTrigger
                 id="bank"
-                className="h-auto! w-full rounded-[30px] border border-gray-400 px-6! py-4!"
+                className="h-auto! w-full cursor-pointer rounded-[30px] border border-gray-400 px-6! py-4!"
                 aria-label="Select your bank"
                 aria-required="true"
               >
                 <SelectValue placeholder="Select an option" />
               </SelectTrigger>
-              <SelectContent className="mt-12 border-0 bg-white font-sans">
+              <SelectContent className="mt-12 cursor-pointer border-0 bg-white font-sans">
                 <SelectItem value="access">Access Bank</SelectItem>
                 <SelectItem value="gtb">GTBank</SelectItem>
                 <SelectItem value="first">First Bank</SelectItem>
@@ -119,7 +120,6 @@ export default function RecipientDetails({
             </span>
           </div>
 
-          {/* Account Name (Auto-filled) */}
           <div className="space-y-2">
             <Label
               htmlFor="account-name"
@@ -142,7 +142,7 @@ export default function RecipientDetails({
 
           <Button
             type="submit"
-            className="bg-primary h-12 w-full rounded-full text-base font-medium text-white hover:bg-[#0d3f46]"
+            className="bg-primary h-12 w-full cursor-pointer rounded-full text-base font-medium text-white hover:bg-[#0d3f46]"
             disabled={!bank || !accountNumber}
             aria-disabled={!bank || !accountNumber}
             aria-label="Proceed to next step with recipient details"

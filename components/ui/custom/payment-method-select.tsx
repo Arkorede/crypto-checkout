@@ -51,7 +51,7 @@ export default function PaymentMethodSelect({
       <Button
         type="button"
         variant="outline"
-        className="text-primary w-full justify-between rounded-[30px] border border-gray-400 bg-transparent p-6! text-left text-base font-normal"
+        className="text-primary w-full cursor-pointer justify-between rounded-[30px] border border-gray-400 bg-transparent p-6! text-left text-base font-normal"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
