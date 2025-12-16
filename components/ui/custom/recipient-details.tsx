@@ -59,7 +59,7 @@ export default function RecipientDetails({
           <div></div>
         </div>
       </div>
-      <div className="space-y-6 pt-8">
+      <div className="space-y-6 px-6 pt-8">
         <form
           className="space-y-6"
           onSubmit={(e) => {

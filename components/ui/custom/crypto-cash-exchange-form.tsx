@@ -42,7 +42,8 @@ export default function CryptoCashExchangeForm() {
   const [payCurrency, setPayCurrency] = useState<AllCurrencyValue>("ETH");
   const [receiveCurrency, setReceiveCurrency] =
     useState<AllCurrencyValue>("USDT-CELO");
-  const [paymentMethod, setPaymentMethod] = useState("");
+  const [payToMethod, setPayToMethod] = useState("");
+  const [payFromMethod, setPayFromMethod] = useState("");
 
   const [activeTab, setActiveTab] = useState("crypto-to-cash");
   const { tabsList, tabsTrigger } = tabsStyles();
@@ -94,14 +95,17 @@ export default function CryptoCashExchangeForm() {
     accountNumber: string;
     accountName: string;
   }) => {
-    console.log("Complete transaction:", {
-      youPayAmount,
-      payCurrency,
-      youReceiveAmount,
-      receiveCurrency,
-      paymentMethod,
-      ...data,
-    });
+    alert(
+      JSON.stringify({
+        youPayAmount,
+        payCurrency,
+        youReceiveAmount,
+        receiveCurrency,
+        payToMethod,
+        payFromMethod,
+        ...data,
+      }),
+    );
   };
 
   if (step === "recipient") {
@@ -151,19 +155,19 @@ export default function CryptoCashExchangeForm() {
           />
           <PaymentMethodSelect
             label="Pay from"
-            value={paymentMethod}
-            onChange={setPaymentMethod}
+            value={payFromMethod}
+            onChange={setPayFromMethod}
           />
           <PaymentMethodSelect
             label="Pay to"
-            value={paymentMethod}
-            onChange={setPaymentMethod}
+            value={payToMethod}
+            onChange={setPayToMethod}
           />
           <Button
             type="submit"
             className="bg-primary h-12 w-full cursor-pointer rounded-full text-base font-medium text-white hover:bg-[#0d3f46]"
-            disabled={!youPayAmount || !paymentMethod}
-            aria-disabled={!youPayAmount || !paymentMethod}
+            disabled={!youPayAmount || !payFromMethod || !payToMethod}
+            aria-disabled={!youPayAmount || !payFromMethod || !payToMethod}
             aria-label="Proceed to convert cryptocurrency"
           >
             Convert now
