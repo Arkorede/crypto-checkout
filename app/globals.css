@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+  --color-gray-100: #e0e0e0;
+  --color-gray-200: #f2f2f2;
+  --color-gray-300: #828282;
+  --color-primary: #013941;
+  --color-green-100: #e6fbf2;
+}
+
 @theme inline {
   --font-sans: var(--font-outfit);
 }
